@@ -1,0 +1,106 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> KODE ENDPOINT™ </title>
+    <meta name="description" content="Login">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+    <!-- Call App Mode on ios devices -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- base css -->
+    <link rel="stylesheet" media="screen, print" href="/Content/css/vendors.bundle.css">
+    <link rel="stylesheet" media="screen, print" href="/Content/css/app.bundle.css">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <!-- Optional: page related CSS-->
+    <link rel="stylesheet" media="screen, print" href="/Content/css/page-login.css">
+</head>
+<body>
+    <div class="blankpage-form-field">
+        <div class="page-logo m-0 w-100 align-items-center justify-content-center rounded border-bottom-left-radius-0 border-bottom-right-radius-0 px-4">
+            <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
+                <img src="/img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                <span class="page-logo-text mr-1">KODE ENDPOINT™ Console</span>
+                <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
+            </a>
+        </div>
+        <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
+            <form action="/Home/Index" method="post"  class="needs-validation" novalidate >
+                <div class="panel-content">
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label" for="validationTooltip04">Username <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="Username" placeholder="Username" required>
+                            <div class="invalid-tooltip">
+                                Please provide a valid username.
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label" for="validationTooltip07">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="Password" placeholder="Password" required>
+                            <div class="invalid-tooltip">
+                                Please enter a valid password.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="col-12">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="rememberme">
+                                <label class="custom-control-label" for="rememberme"> Remember me for the next 30 days</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0 d-flex flex-row align-items-center">
+                    <button class="btn btn-primary ml-auto" type="submit">Submit form</button>
+                </div>
+            </form>
+        </div>
+        <div class="blankpage-footer text-center">
+            <a href="#"><strong>Recover Password</strong></a> | <a href="#"><strong>Register Account</strong></a>
+        </div>
+    </div>
+    <div class="login-footer p-2">
+        <div class="row">
+            <div class="col col-sm-12 text-center">
+                <i><strong>System Message:</strong> You were logged out from 198.164.246.1 on Saturday, March, 2017 at 10.56AM</i>
+            </div>
+        </div>
+    </div>
+    <video poster="/img/backgrounds/clouds.png" id="bgvid" playsinline autoplay muted loop>
+        <source src="/media/video/cc.webm" type="video/webm">
+        <source src="/media/video/cc.mp4" type="video/mp4">
+    </video>
+    <script src="/Scripts/js/vendors.bundle.js"></script>
+    <script src="/Scripts/js/app.bundle.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = $(".needs-validation");
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false)
+                        {
+                           event.preventDefault();
+                           event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+    </script>
+</body>
+</html>
